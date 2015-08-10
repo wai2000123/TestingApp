@@ -15,6 +15,8 @@ import java.util.List;
 
 import testingapp.dickyleehk.dickytestappcollection.Fragments.FragmentHereMap;
 import testingapp.dickyleehk.dickytestappcollection.Fragments.FragmentHereMapOffline;
+import testingapp.dickyleehk.dickytestappcollection.Fragments.FragmentMapsforge;
+import testingapp.dickyleehk.dickytestappcollection.Fragments.FragmentOSMDroid;
 import testingapp.dickyleehk.dickytestappcollection.Fragments.FragmentStreamingVideo;
 
 public class MainActivity extends AppCompatActivity
@@ -46,6 +48,8 @@ public class MainActivity extends AppCompatActivity
             fragments.add(FragmentHereMap.newInstance(MainActivity.this));
             fragments.add(FragmentHereMapOffline.newInstance(MainActivity.this));
             fragments.add(FragmentStreamingVideo.newInstance(MainActivity.this));
+            fragments.add(FragmentMapsforge.newInstance(MainActivity.this));
+            fragments.add(FragmentOSMDroid.newInstance(MainActivity.this));
         }
 
         setContentView(R.layout.activity_main);
@@ -81,6 +85,12 @@ public class MainActivity extends AppCompatActivity
                 break;
             case 3:
                 mTitle = getString(R.string.title_section3);
+                break;
+            case 4:
+                mTitle = getString(R.string.title_section4);
+                break;
+            case 5:
+                mTitle = getString(R.string.title_section5);
                 break;
         }
     }

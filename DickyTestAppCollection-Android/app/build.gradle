@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 21
+    compileSdkVersion 22
     buildToolsVersion "22.0.1"
     defaultConfig {
         applicationId "testingapp.dickyleehk.dickytestappcollection"
@@ -9,6 +9,9 @@ android {
         targetSdkVersion 18
         versionCode 1
         versionName "1.0"
+
+        // Enabling multidex support.
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -18,11 +21,13 @@ android {
     }
     productFlavors {
     }
+
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    //    compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:22.2.1'
-    compile files('libs/HERE/HERE-sdk.jar')
-    compile files('libs/HERE/HERE-sdk-javadoc.jar')
+    compile fileTree(dir: 'libs/HERE', include: ['*.jar'])
+    compile fileTree(dir: 'libs/mapsforge', include: ['*.jar'])
+    compile fileTree(dir: 'libs/osmdroid', include: ['*.jar'])
 }
