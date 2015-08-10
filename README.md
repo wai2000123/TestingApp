@@ -6,4 +6,4 @@ Description:
 1. DickyTestAppCollection</br>
 	- Here map </br>
 	- Streaming video </br>
-	- Background </br>
+	- Video Background? </br>
