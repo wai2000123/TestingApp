@@ -3,7 +3,7 @@ Some testing app
 
 Description:
 
-1. DickyTestAppCollection</br>
-	- Here map </br>
+1. DickyTestAppCollection-Android</br>
+	- Here map(Remove soon) </br>
 	- Streaming video </br>
 	- Video Background? </br>
