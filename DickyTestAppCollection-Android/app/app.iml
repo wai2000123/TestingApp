@@ -87,7 +87,6 @@
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/rs" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/symbols" />
       <excludeFolder url="file://$MODULE_DIR$/build/outputs" />
-      <excludeFolder url="file://$MODULE_DIR$/build/tmp" />
     </content>
     <orderEntry type="jdk" jdkName="Android API 22 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -95,16 +94,12 @@
     <orderEntry type="library" exported="" name="mapsforge-map-android-0.5.1" level="project" />
     <orderEntry type="library" exported="" name="mapsforge-map-awt-0.5.1" level="project" />
     <orderEntry type="library" exported="" name="mapsforge-map-reader-0.5.1" level="project" />
-    <orderEntry type="library" exported="" name="multidex-1.0.1" level="project" />
     <orderEntry type="library" exported="" name="kxml2-2.3.0" level="project" />
+    <orderEntry type="library" exported="" name="multidex-1.0.1" level="project" />
     <orderEntry type="library" exported="" name="support-annotations-22.2.1" level="project" />
-    <orderEntry type="library" exported="" name="osmdroid-third-party-4.2-javadoc" level="project" />
     <orderEntry type="library" exported="" name="mapsforge-core-0.5.1" level="project" />
-    <orderEntry type="library" exported="" name="osmdroid-android-4.2-javadoc" level="project" />
-    <orderEntry type="library" exported="" name="osmdroid-third-party-4.2" level="project" />
     <orderEntry type="library" exported="" name="HERE-sdk" level="project" />
     <orderEntry type="library" exported="" name="support-v4-22.2.1" level="project" />
-    <orderEntry type="library" exported="" name="HERE-sdk-javadoc" level="project" />
     <orderEntry type="library" exported="" name="androidsvg-1.2.1" level="project" />
     <orderEntry type="library" exported="" name="appcompat-v7-22.2.1" level="project" />
     <orderEntry type="library" exported="" name="slf4j-android-1.6.1-RC1" level="project" />
