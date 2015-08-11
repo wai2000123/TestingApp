@@ -29,7 +29,7 @@ import testingapp.dickyleehk.dickytestappcollection.R;
  * Created by dickyleehk on 6/8/15.
  */
 public class FragmentOSMDroid extends Fragment {
-
+//AADDD
     static String TAG = "FragmentOSMDroid";
 
 
