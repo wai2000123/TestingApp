@@ -13,11 +13,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.TextView;
 
-import org.osmdroid.api.IMap;
-import org.osmdroid.util.ResourceProxyImpl;
+import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
+import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
 
 import java.io.IOException;
@@ -37,6 +36,8 @@ public class FragmentOSMDroid extends Fragment {
     private TextView tvLat = null;
     private TextView tvLong = null;
 
+    private Location selfLoc = null;
+
     public static Fragment newInstance(Context context) {
         FragmentOSMDroid f = new FragmentOSMDroid();
         return f;
@@ -53,6 +54,8 @@ public class FragmentOSMDroid extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         tvLat = (TextView) getView().findViewById(R.id.tvLat);
         tvLong = (TextView) getView().findViewById(R.id.tvLong);
+
+        initLocationManager();
         initNormalMap();
     }
 
@@ -62,13 +65,7 @@ public class FragmentOSMDroid extends Fragment {
         super.onDestroyView();
     }
 
-    private void initNormalMap() {
-
-        ResourceProxyImpl mResourceProxy = new ResourceProxyImpl(getActivity().getApplicationContext());
-        MapView mMapView = new MapView(getActivity(), 256, mResourceProxy);
-
-        FrameLayout fl = (FrameLayout)getView().findViewById(R.id.osmdroid_map_container);
-        fl.addView(mMapView);
+    public void initLocationManager(){
 
         //GPS
         LocationManager locationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
@@ -103,7 +100,7 @@ public class FragmentOSMDroid extends Fragment {
                 Log.d(TAG, "Current Geo:" + cityName);
                 /*-------------------------------------*/
 
-//                updateSelfLocation(loc);
+                updateSelfLocation(loc);
             }
 
             @Override
@@ -127,5 +124,23 @@ public class FragmentOSMDroid extends Fragment {
 
         String pv = locationManager.getBestProvider(criteria, true);
         locationManager.requestLocationUpdates(pv, 500, 1, locationListener);
+    }
+
+    private void updateSelfLocation(Location loc){
+        selfLoc = loc;
+    }
+
+    private void initNormalMap() {
+        MapView mMapView = (MapView)getView().findViewById(R.id.osmdroid_map_container);
+        mMapView.setTileSource(TileSourceFactory.MAPNIK);
+
+        GeoPoint point;
+        if(selfLoc == null){
+            point = new GeoPoint((int) (22.3593252 * 1E6),(int) (114.1408686 * 1E6));
+        }else{
+            point = new GeoPoint((int) (selfLoc.getLatitude()* 1E6),(int) (selfLoc.getLongitude()* 1E6));
+        }
+        mMapView.getController().setCenter(point);
+        mMapView.getController().setZoom(10);
     }
 }
